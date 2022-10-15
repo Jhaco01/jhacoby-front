@@ -1,0 +1,17 @@
+body{
+    height: 100% !important;
+    overflow: auto !important;
+}
+
+.products-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    max-width: 80vw;
+    height: auto;
+}
+.card{
+    margin: 10px;
+    width: 300px;    
+}
