@@ -3,6 +3,11 @@ body{
     overflow: auto !important;
 }
 
+.section-div{
+    position: absolute; 
+    left: 290px;
+}
+
 .products-container{
     display: flex;
     flex-direction: row;
@@ -14,4 +19,9 @@ body{
 .card{
     margin: 10px;
     width: 300px;    
+}
+
+.card-img img{
+    width: 250px; 
+    height: auto;
 }
