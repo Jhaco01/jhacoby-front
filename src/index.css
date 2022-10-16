@@ -21,7 +21,54 @@ body{
     width: 300px;    
 }
 
+.product-name{
+    font-weight: 700;
+}
+
 .card-img img{
     width: 250px; 
     height: auto;
+}
+
+.text-dark{
+    font-weight: 500;
+    background-color: rgb(25, 241, 75);
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.font-weight-bold{
+    padding: 30px;
+    color: red;
+}
+
+.d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark{
+    width:280px; 
+    height: 110vh; 
+    margin-top: -50px; 
+    position: fixed;   
+}
+
+.nav.nav-pills.flex-colum.mb-auto{
+    margin-top: 10px;
+}
+
+a.nav-link.text-white{
+    width: 270px; 
+    padding: 10px;
+}
+
+.input-group{
+    width: 100%; 
+    margin: auto;
+}
+
+.form-outline{
+    width: 600px; 
+    margin-left: 500px; 
+    margin-top: 10px;
+}
+
+.btn.btn-primary{
+    margin-top: 10px;
 }
