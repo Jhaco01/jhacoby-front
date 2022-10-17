@@ -2,14 +2,14 @@ const getProducts = async(n) => {
 
       try {
         
-        const resp = await fetch(`http://localhost:3000/products/${n}`);
+        const resp = n ? await fetch(`http://localhost:3000/products/${n}`) : await fetch(`http://localhost:3000/products`);
 
         if (resp.ok) {
             const data = await resp.json();
             
             const root = document.querySelector('.root');
-            const sectionDiv = document.createElement('div');
-            sectionDiv.classList.add('section-div');            
+            const sectionDiv = document.querySelector('.section-div');
+            sectionDiv.innerHTML = '';
             const section = document.createElement('section');
             const container = document.createElement('div');
             container.classList.add('products-container');
@@ -87,12 +87,21 @@ const getCategories = async() => {
 
         for (let dat of data) {
           const li = document.createElement('li');          
-          const aClasses = dat === data[0] ? ['nav-link','active'] : ['nav-link','text-white'] ;
+          const aClasses =  ['nav-link','text-white'] ;
           const a = document.createElement('a');
           a.classList.add(...aClasses);
           a.id = `${dat.id}`;
           const aTxt = dat.name.toUpperCase();
           a.innerHTML = aTxt;
+          a.addEventListener('click', () => {
+              getProducts(`${dat.id}`)              
+          });          
+          a.addEventListener('mouseover', ()=>{
+            a.classList.add('active');
+            setTimeout(()=>{
+            a.classList.remove('active');
+            },300)
+          })
           li.appendChild(a);
           ul.appendChild(li);
         }
@@ -137,16 +146,20 @@ const getSearcher = () => {
   button.appendChild(i);
   divForm.appendChild(button);
   form.appendChild(divForm);
+  form.addEventListener('submit',()=>{
+       getProducts();       
+  })
   header.appendChild(form);
   root.appendChild(header);  
 }
+
 
 
 const init = () => {
     
     getSearcher();
     getCategories();
-    getProducts('2');
+    getProducts();
 
 }
 
