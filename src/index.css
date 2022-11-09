@@ -3,6 +3,14 @@ body{
     overflow: auto !important;
 }
 
+a{
+    transition: all 1s;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
 .section-div{
     position: absolute; 
     left: 290px;
@@ -51,6 +59,7 @@ body{
 
 .nav.nav-pills.flex-colum.mb-auto{
     margin-top: 10px;
+    margin-left: -10px;
 }
 
 a.nav-link.text-white{
