@@ -1,4 +1,13 @@
-import { getProducts } from "./Products/getProducts.js";
+import { getProducts } from "../Products/getProducts.js";
+import { searchProduct } from "./searchProduct.js";
+
+const handleSubmit = ( e ) => {
+     
+     e.preventDefault();
+     const value = document.querySelector('#form1').value;           
+     value ? searchProduct(value) : getProducts();     
+
+}
 
 export const getSearcher = () => {
     
@@ -7,6 +16,8 @@ export const getSearcher = () => {
           const header = document.createElement('header');
                
                const form =  document.createElement('form');
+
+                    
 
                     const divForm = document.createElement('div');
                     divForm.classList.add('input-group');
@@ -23,6 +34,8 @@ export const getSearcher = () => {
 
                     divForm.appendChild(divInput);
                     
+
+
                          const button = document.createElement('button');
                          button.type = 'submit'; 
                          const btnClasses = ['btn','btn-primary'];
@@ -36,14 +49,11 @@ export const getSearcher = () => {
 
                     divForm.appendChild(button);
 
-                    form.appendChild(divForm);
-
-                    form.addEventListener('submit',()=>{
-                         getProducts();       
-                    })
+               form.appendChild(divForm);                    
+               form.addEventListener('submit', handleSubmit)
                     
           header.appendChild(form);
 
-     root.appendChild(header);  
+     root.appendChild(header);       
 
 }
