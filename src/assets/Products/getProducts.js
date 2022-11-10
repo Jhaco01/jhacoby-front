@@ -10,12 +10,14 @@ export const getProducts = async(n) => {
   const root = document.querySelector('.root');
     
     const section = document.createElement('section');
+    section.classList.add('py-5')
   
       const sectionDiv = document.querySelector('.section-div');
       sectionDiv.innerHTML = '';
                       
           const container = document.createElement('div');
-          container.classList.add('products-container');
+          const containerClasses = ['products-container','container','px-4','px-lg-5','mt-5']
+          container.classList.add(...containerClasses);
 
           data.map( dat => getItemCard(container, dat) )
 
