@@ -5,9 +5,9 @@ export const searchProduct = async( search ) => {
           
   const data = await searchProvider( search );                    
                       
-    const container = document.querySelector('.products-container');
-    container.innerHTML = '';
+    const itemsDiv = document.querySelector('#items-div');
+    itemsDiv.innerHTML = '';
 
-        data.map( dat => getItemCard(container, dat) )                        
+        data.map( dat => getItemCard(itemsDiv, dat) )                        
           
 }
