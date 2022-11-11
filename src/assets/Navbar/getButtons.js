@@ -6,6 +6,7 @@ const getUl = () => {
     const ul = document.createElement('ul');
     const ulClasses = ['nav','nav-pills','flex-colum','mb-auto']  
     ul.classList.add(...ulClasses);
+    ul.id = 'ul'
   
     return ul;
   

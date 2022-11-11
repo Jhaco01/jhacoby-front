@@ -16,53 +16,38 @@ a:hover{
     left: 290px;
 }
 
-.products-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    max-width: 80vw;
-    height: auto;
-}
 .card{
     margin: 10px;
     width: 300px;    
+    margin-bottom: 10px !important;
 }
 
-.product-name{
-    font-weight: 700;
+.card-img-top{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
-.card-img img{
-    width: 250px; 
-    height: auto;
+.card-img-top img{
+    height: 280px;
+    width: auto;
+    object-fit: cover;
+    object-position: center;
 }
 
-.text-dark{
-    font-weight: 500;
-    background-color: rgb(25, 241, 75);
-    border-radius: 3px;
-    padding: 3px;
-}
-
-.font-weight-bold{
-    padding: 30px;
-    color: red;
-}
-
-.d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark{
+#divNav{
     width:280px; 
     height: 110vh; 
     margin-top: -50px; 
     position: fixed;   
 }
 
-.nav.nav-pills.flex-colum.mb-auto{
+#ul{
     margin-top: 10px;
     margin-left: -10px;
 }
 
-a.nav-link.text-white{
+#divNav a{
     width: 270px; 
     padding: 10px;
 }
