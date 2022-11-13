@@ -2,7 +2,7 @@ export const categoriesProvider = async () => {
 
     try {
       
-        const resp = await fetch('http://localhost:3000/category');
+        const resp = await fetch('https://bsale-jhacoby-api.onrender.com/category');
     
         if (resp.ok) {
             
@@ -18,7 +18,7 @@ export const categoriesProvider = async () => {
     
       } catch (error) {
     
-        throw error;
+        return [{name: 'items', id: '' }];
     
     }
 

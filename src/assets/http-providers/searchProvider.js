@@ -2,7 +2,7 @@ export const searchProvider = async ( search ) => {
     
     try {
         
-        const resp = await fetch(`http://localhost:3000/products/product/${ search }`);
+        const resp = await fetch(`https://bsale-jhacoby-api.onrender.com/products/product/${ search }`);
 
         if (resp.ok) {
             

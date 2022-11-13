@@ -1,3 +1,4 @@
+import { errorHandler } from "../../error-handlers/errorHandler.js";
 import { getProducts } from "../../Products/getProducts.js";
 
 const illuminate = ( a ) => {
@@ -20,8 +21,12 @@ export const getCategoryList = async ( ul, {id, name} ) => {
       const aText = name.toUpperCase();
       a.innerHTML = aText;
       
-      a.addEventListener('click', () => {
-          getProducts(`${id}`)              
+      a.addEventListener('click', async() => {                        
+          try{
+            await getProducts(`${id}`);
+          } catch (error) {
+            errorHandler('intente más tarde.')
+          }
       });    
 
       a.addEventListener('mouseover', () => illuminate( a ) )

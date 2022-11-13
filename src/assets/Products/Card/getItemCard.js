@@ -37,7 +37,7 @@ export const getItemCard = ( container, { name, url_image, price, discount } ) =
 
                     const prices = discount ? `${price} CLP - ${discount}% off` : `${price} CLP`
 
-                    centerTextDiv.append(prices)
+                centerTextDiv.append(prices)
             
             cardInfo.appendChild(centerTextDiv);
     
@@ -47,4 +47,4 @@ export const getItemCard = ( container, { name, url_image, price, discount } ) =
 
     container.appendChild(cardDiv);              
 
-  }
+}

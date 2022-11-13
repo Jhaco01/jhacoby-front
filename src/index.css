@@ -66,3 +66,39 @@ a:hover{
 .btn.btn-primary{
     margin-top: 10px;
 }
+
+@keyframes loading {
+    0%{        
+         transform: rotate(0deg);                    
+    }
+    
+    50%{         
+         transform: rotate(180deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+    
+}
+
+.animation {
+    width: 60%;
+    height: auto;
+    margin-top: 10vh;
+    margin-left: 20vw;
+    animation-name: loading;
+    animation-duration: 4s;  
+    animation-timing-function: linear;    
+    animation-iteration-count: infinite;
+    animation-direction: normal;                              
+}
+
+.error-div{
+    width: 80%;    
+    margin-top: 35vh;
+    margin-left: 25vw;
+    background-color: rgb(246, 240, 240);
+    text-align: center;
+    padding: 10%;
+}
