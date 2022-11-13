@@ -1,0 +1,1 @@
+export const errorHandler=(e,n)=>{e.innerHTML="";const r=document.createElement("div");r.classList.add("error-div");const t=document.createElement("h3");t.innerText="Ha ocurrido un error",r.appendChild(t);const d=document.createElement("p");d.innerText=`Por favor ${n}`,r.appendChild(d),e.appendChild(r)};

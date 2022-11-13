@@ -1,0 +1,1 @@
+export const getAnimation=()=>{const e=document.querySelector(".section-div"),t=document.createElement("img");t.src="https://bitzen.cl/49-large_default/modulo-integracion-bsale-prestashop.jpg",t.classList.add("animation"),e.appendChild(t)};

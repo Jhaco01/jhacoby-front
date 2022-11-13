@@ -1,0 +1,1 @@
+const getNav=()=>{const e=document.createElement("div");return e.classList.add("d-flex","flex-column","flex-shrink-0","p-3","text-white","bg-dark"),e.id="divNav",e};export const getNavbar=async()=>{const e=document.querySelector(".root"),t=getNav();e.appendChild(t)};

@@ -1,0 +1,1 @@
+export const getItemCardImage=e=>{const t=document.createElement("div");t.classList.add("card-img-top");const a=document.createElement("img");return a.src=e?`${e}`:"https://bitzen.cl/49-medium_default/modulo-integracion-bsale-prestashop.jpg",t.appendChild(a),t};
