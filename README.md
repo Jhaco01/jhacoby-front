@@ -1,6 +1,16 @@
 # BSALE JHACOBY FRONT END
 La aplicación web está desarrollada para consumir API's de productos y emular la visualización de un e-commerce, ya que despliega los productos recibidos, junto con su nombre, precio y un descuento como propiedad opcional.
 
+## ¿Cómo funciona la pagina?
+Esta aplicación web funciona de manera bastante sencilla. 
+Sus funcionalidades son:
+
+* Mostrar los productos disponibles: No requiere ningun comando.
+
+* Mostrar los productos por categoría: Se realiza a través del click en los botones de la barra de navegación, en los cuales aparece el nombre de cada categoría.
+
+* Buscar un producto mediante palabras clave: Se realiza a través del ingreso de cualquier palabra a buscar, en la barra de busqueda ubicada en la parte de arriba de la pagina.
+
 La organización está desarrollada a través de varios componentes que se inyectan al DOM de forma secuencial. A continuación se explica cada uno de ellos:
 
 ## Carpeta Animation
