@@ -1,0 +1,1 @@
+export const productsProvider=async t=>{try{const o=t?await fetch(`https://bsale-jhacoby-api.onrender.com/products/${t}`):await fetch("https://bsale-jhacoby-api.onrender.com/products");if(o.ok){return await o.json()}throw await o.json()}catch(t){throw t}};

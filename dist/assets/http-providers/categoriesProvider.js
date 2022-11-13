@@ -1,0 +1,1 @@
+export const categoriesProvider=async()=>{try{const t=await fetch("https://bsale-jhacoby-api.onrender.com/category");if(t.ok){return await t.json()}throw await t.json()}catch(t){return[{name:"items",id:""}]}};

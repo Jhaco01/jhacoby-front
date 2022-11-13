@@ -445,3 +445,77 @@ export const getSearcher = () => {
 }
 </pre>
 
+### searchProduct
+Es el componente encargado de enviar la solicitud al servidor con la cadena string que será utilizada para obtener los productos relacionados. Es llamado cada vez que se hace submit en el boton del input explicado anteriormente.
+
+<pre>
+import { errorHandler } from "../error-handlers/errorHandler.js";
+import { searchProvider } from "../http-providers/searchProvider.js";
+import { getItemCard } from "../Products/Card/getItemCard.js";
+
+export const searchProduct = async( search ) => {
+
+  //Acá se realiza la solicitud de los productos relacionados al servidor.         
+  const data = await searchProvider( search );    
+
+    const columns = data.length < 3 ? '2' : '3';                          
+    const itemsDiv = document.querySelector('#items-div');
+
+    //Esta linea de codigo se debe a que en el armado inicial de la pagina, las columnas quedan fijadas en 3, lo que 
+    //puede afectar la visualización de los productos que resulten de la busqueda.
+    itemsDiv.classList.replace('row-cols-md-3', `row-cols-md-${columns}`);    
+    itemsDiv.innerHTML = '';
+
+        //Se verifica si existen productos relacionados a la busqueda, en caso contrario se muestra un error.
+        if (data.length === 0 ) { errorHandler(itemsDiv,'intente con otra palabra.') }
+          
+        //Se inyectan en el DOM las representaciones visuales de los productos buscados.  
+        data.map( dat => getItemCard(itemsDiv, dat) )                                
+          
+}
+</pre>
+
+## App.js
+Es el archivo encargado de hacer el llamado a todas las funciones necesarias para el inicio del funcionamiento de la app.
+
+<pre>
+import { getNavbar } from "./assets/Navbar/getNavbar.js";
+import { getSearcher } from "./assets/Searcher/getSearcher.js";
+import { getProducts } from "./assets/Products/getProducts.js";
+import { getButtons } from "./assets/Navbar/getButtons.js";
+import { getAnimation } from "./assets/Animation/getAnimation.js";
+import { errorHandler } from "./assets/error-handlers/errorHandler.js";
+
+export const init = async () => {
+
+  //Se muestra el buscador.  
+  getSearcher();
+  
+  //Se muestra la barra de navegación lateral.
+  getNavbar();
+
+  //Se muestra la animación mientras se cargan los componentes.
+  getAnimation();
+
+  //Se solicitan las categorías para el armado de los botones en la pagina.
+  await getButtons();
+  
+  //Se solicitan los productos a la API y se controla el error de ser necesario mostrando el mensaje al usuario.
+  try{
+    await getProducts();
+  } catch (error) {
+    const sectionDiv = document.querySelector('.section-div');
+    errorHandler(sectionDiv,'intente más tarde.');
+  }
+
+}
+</pre>
+
+## index.js
+Es el archivo encargado de llamar a la funcion `init` que da inicio al funcionamiento de los componentes de la app.
+
+## index.html
+Es el archivo en el que se inyectan todos los componentes, y donde se crean los componentes `.root` y `.section-div`, dentro de los cuales está contenida la app.
+
+## index.css 
+Agrega algunos estilos complementarios a los componentes de la app, estilizada principalmente mediante bootstrap.

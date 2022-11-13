@@ -14,7 +14,8 @@ export const init = async () => {
   try{
     await getProducts();
   } catch (error) {
-    errorHandler('intente más tarde.')
+    const sectionDiv = document.querySelector('.section-div');
+    errorHandler(sectionDiv,'intente más tarde.');
   }
 
 }

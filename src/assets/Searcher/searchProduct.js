@@ -8,9 +8,7 @@ export const searchProduct = async( search ) => {
 
     const columns = data.length < 3 ? '2' : '3';                          
     const itemsDiv = document.querySelector('#items-div');
-    itemsDiv.classList.remove('row-cols-md-3');
-    const itemsDivClasses = ['row', 'gx-4', `row-cols-md-${columns}`];
-    itemsDiv.classList.add(...itemsDivClasses)
+    itemsDiv.classList.replace('row-cols-md-3', `row-cols-md-${columns}`);    
     itemsDiv.innerHTML = '';
 
         if (data.length === 0 ) { errorHandler(itemsDiv,'intente con otra palabra.') }
